@@ -1,0 +1,13 @@
+{
+    "users": [
+        {
+            "user": {
+                "username": "agrim",
+                "team": "service1"
+            },
+            "groups": [
+                "service1-owner"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "groups": [
+        {
+            "name": "service1-owner",
+            "allowed_plans": [
+                "*"
+            ]
+        },
+        {
+            "name": "service1-deploy",
+            "allowed_plans": [
+                "service1.deploy"
+            ]
+        }
+    ]
+}

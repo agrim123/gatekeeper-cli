@@ -1,12 +1,7 @@
 package main
 
-import (
-	"context"
-	"fmt"
-
-	"github.com/agrim123/gatekeeper"
-)
+import "github.com/agrim123/gatekeeper-cli/cmd"
 
 func main() {
-	fmt.Println(gatekeeper.NewGatekeeper(context.Background()))
+	cmd.Execute()
 }
