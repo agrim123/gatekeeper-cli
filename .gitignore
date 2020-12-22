@@ -19,3 +19,4 @@ vendor/
 keys/
 
 configs/servers.json
+configs/plan.json
