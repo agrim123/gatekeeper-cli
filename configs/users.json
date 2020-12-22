@@ -2,6 +2,15 @@
     "users": [
         {
             "user": {
+                "username": "dummy",
+                "team": "service1"
+            },
+            "groups": [
+                "service1-shell"
+            ]
+        },
+        {
+            "user": {
                 "username": "agrim",
                 "team": "service1"
             },

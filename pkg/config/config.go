@@ -8,9 +8,6 @@ func Init() {
 	viper.AddConfigPath("configs")
 	viper.SetConfigType("toml")
 
-	viper.SetConfigName("config")
-	viper.ReadInConfig()
-
 	viper.SetConfigType("json")
 
 	viper.SetConfigName("users")
