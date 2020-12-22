@@ -5,9 +5,9 @@
             "instances": [
                 {
                     "user": "ubuntu",
-                    "ip": "ec2-3-84-241-53.compute-1.amazonaws.com",
+                    "ip": "127.0.0.1",
                     "port": "22",
-                    "private_key": "/Users/agrim/projects/personal/gatekeeper-cli/keys/service1.pem"
+                    "private_key": "/path/to/keys/service1.pem"
                 }
             ]
         }

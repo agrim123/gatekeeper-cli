@@ -17,3 +17,5 @@ vendor/
 .netrc
 
 keys/
+
+configs/servers.json

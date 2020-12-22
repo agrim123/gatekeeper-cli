@@ -2,11 +2,9 @@ module github.com/agrim123/gatekeeper-cli
 
 go 1.15
 
-// replace github.com/agrim123/gatekeeper v0.0.0 => /Users/agrim/projects/personal/gatekeeper
-
 require (
 	github.com/Microsoft/go-winio v0.4.16 // indirect
-	github.com/agrim123/gatekeeper v0.0.1
+	github.com/agrim123/gatekeeper v0.0.2
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/gogo/protobuf v1.3.1 // indirect
 	github.com/golang/protobuf v1.4.3 // indirect
