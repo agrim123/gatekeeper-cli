@@ -7,7 +7,7 @@
                     "user": "ubuntu",
                     "ip": "ec2-3-84-241-53.compute-1.amazonaws.com",
                     "port": "22",
-                    "private_key": "keys/service1.pem"
+                    "private_key": "/Users/agrim/projects/personal/gatekeeper-cli/keys/service1.pem"
                 }
             ]
         }
