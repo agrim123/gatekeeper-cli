@@ -16,7 +16,6 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "gatekeeper",
 	Short: "Gatekeeper is an authentication and authorization oriented tool allowing non-root users to ssh to a machine without giving them access to private keys.",
-	Long:  ``,
 }
 
 var runPlanCmd = &cobra.Command{
@@ -42,10 +41,11 @@ var runPlanCmd = &cobra.Command{
 
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "Lists all commands the user can run",
+	Short: "Lists all commands the current user can run",
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
-		allowedCmds := store.GetAllowedCommandsForUser()
+		g := gatekeeper.NewGatekeeper(context.Background())
+		allowedCmds := g.AllowedCommands()
 		if len(allowedCmds) == 0 {
 			logger.Info("No allowed commands")
 			return
@@ -60,9 +60,31 @@ var listCmd = &cobra.Command{
 	},
 }
 
+var whoamiCmd = &cobra.Command{
+	Use:   "whoami",
+	Short: "Shows information about user",
+	Long: `Shows details information about the user executing a plan.
+Returns username, groups the user belongs to and the commands user is
+allowed to run.
+	`,
+	Run: func(cmd *cobra.Command, args []string) {
+		whoami := gatekeeper.NewGatekeeper(context.Background()).Whoami()
+		fmt.Println("Username:", whoami.Username)
+		fmt.Println("Groups:", whoami.Groups)
+		fmt.Println("Allowed Commands:")
+		for plan, options := range whoami.AllowedCommands {
+			fmt.Println(" ", plan)
+			for _, opt := range options {
+				fmt.Println("    " + opt)
+			}
+		}
+	},
+}
+
 func init() {
 	rootCmd.AddCommand(runPlanCmd)
 	rootCmd.AddCommand(listCmd)
+	rootCmd.AddCommand(whoamiCmd)
 }
 
 // Execute is the entrypoint of gatekeeper
